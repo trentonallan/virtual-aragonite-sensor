@@ -2,22 +2,22 @@
 
 Predicting coral reef building conditions from satellite data using machine learning.
 
-## 🎯 Problem
+## Problem
 
 Ocean acidification threatens coral reefs by reducing aragonite saturation (Ωarag), but measuring it requires expensive research cruises ($10,000+/day). This creates a critical bottleneck for coral restoration projects that need to identify suitable planting sites.
 
-## 💡 Solution
+## Solution
 
 A neural network that predicts Ωarag from freely available satellite data (sea surface temperature, chlorophyll-a), enabling global ocean chemistry screening at zero marginal cost.
 
-## 📊 Results
+## Results
 
 - **R² = 0.78+** on held-out test data
 - **RMSE = ~0.40 Ω units** (comparable to measurement uncertainty)
 - **2,140 training samples** spanning 21 years (2000-2021)
 - **Global coverage** from 60°S to 60°N
 
-## 🔬 Methodology
+## Methodology
 
 ### Data Sources
 - **Chemistry**: GLODAP v2.2023 (ocean carbon measurements)
@@ -40,7 +40,7 @@ A neural network that predicts Ωarag from freely available satellite data (sea 
 6. Longitude
 7. Sample depth
 
-## 📁 Project Structure
+## Project Structure
 ```
 acid-project/
 ├── data/
@@ -59,7 +59,7 @@ acid-project/
 └── README.md
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Prerequisites
 ```bash
@@ -111,7 +111,7 @@ omega_pred = checkpoint['scaler_y'].inverse_transform([[omega_pred]])[0][0]
 print(f"Predicted Ωarag: {omega_pred:.2f}")
 ```
 
-## 📈 Performance Analysis
+## Performance Analysis
 
 ### Comparison to Baseline
 | Metric | Baseline (no bathymetry) | With Bathymetry | Improvement |
@@ -125,7 +125,7 @@ print(f"Predicted Ωarag: {omega_pred:.2f}")
 - Sufficient for screening/prioritization (primary use case)
 - Within 2-4× measurement uncertainty
 
-## 🌊 Scientific Context
+## Scientific Context
 
 ### Aragonite Saturation State (Ωarag)
 ```
@@ -143,7 +143,7 @@ print(f"Predicted Ωarag: {omega_pred:.2f}")
 - Site assessment is a major bottleneck
 - This tool enables free global screening
 
-## 🔮 Future Work
+## Future Work
 
 - [ ] Add depth-aware predictions (predict Ω at 5-30m, not just surface)
 - [ ] Implement Physics-Informed Neural Network (PINN) constraints
@@ -152,25 +152,25 @@ print(f"Predicted Ωarag: {omega_pred:.2f}")
 - [ ] Uncertainty quantification (prediction intervals)
 - [ ] Integration with coral restoration databases
 
-## 📚 References
+## References
 
 1. Feely et al. (2004) - Ocean acidification impact on CaCO₃
 2. GLODAP v2.2023 - Global ocean carbon database
 3. MODIS-Aqua - NASA ocean color mission
 4. Mucci (1983) - Aragonite solubility in seawater
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - NOAA NCEI for GLODAP database
 - NASA for MODIS satellite data
 - Google Earth Engine for data processing infrastructure
 - Anthropic Claude for technical guidance
 
-## 📄 License
+## License
 
 MIT License - Free to use for research and conservation
 
-## 👤 Author
+## Author
 
 Trenton Hatch - Northeastern University
-Computer Science (AI concentration) | Co-op: NEU IT
+Computer Science (AI concentration) | allan.tr@northeastern.edu
