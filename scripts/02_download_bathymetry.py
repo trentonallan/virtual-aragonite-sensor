@@ -97,7 +97,7 @@ print(f"\nSuccessfully extracted bathymetry for all samples")
 # Add to dataframe
 df['bathymetry_m'] = bathymetry_values
 
-# Check statistics
+# Display statistics
 print("\n" + "="*60)
 print("BATHYMETRY STATISTICS")
 print("="*60)
