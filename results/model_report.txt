@@ -1,0 +1,107 @@
+ARAGONITE SATURATION STATE PREDICTION MODEL
+======================================================================
+
+DATASET INFORMATION
+-------------------
+Total samples:              2,996
+Clean samples (no missing): 2,140
+Missing/dropped:            856 (28.6%)
+
+Features (7):
+  - salinity
+  - modis_sst
+  - modis_chlora
+  - latitude
+  - longitude
+  - bathymetry_m
+  - depth
+
+Target variable: aragonite (Omega-arag)
+  Range: 0.57 - 6.65
+  Mean:  4.31 ± 0.87
+
+DATA SPLITS
+-----------
+Training:   1,284 samples (60.0%)
+Validation: 428 samples (20.0%)
+Test:       428 samples (20.0%)
+
+MODEL ARCHITECTURE
+------------------
+Algorithm: Random Forest Regressor
+Hyperparameters:
+  - n_estimators: 100
+  - max_depth: 15
+  - min_samples_split: 5
+  - min_samples_leaf: 2
+  - max_features: sqrt
+  - random_state: 42
+
+Training time: 0.10 seconds
+
+PERFORMANCE METRICS
+-------------------
+Test Set (n=428):
+  R² Score:  0.8013
+  RMSE:      0.3867 Omega units (9.0% of mean)
+  MAE:       0.2326 Omega units
+
+Cross-Validation (10-fold, 5 repeats = 50 splits):
+  Mean R²:   0.8025
+  Std Dev:   0.0411
+  Range:     0.6947 - 0.8620
+  95% CI:    [0.7220, 0.8830]
+
+CONFIDENCE SCORES
+-----------------
+Mean confidence: 71.2%
+Range: 0.0% - 93.9%
+
+FEATURE IMPORTANCE
+------------------
+  1. salinity        0.3851 (38.5%)
+  2. modis_sst       0.1815 (18.2%)
+  3. modis_chlora    0.1323 (13.2%)
+  4. latitude        0.1145 (11.4%)
+  5. longitude       0.0970 (9.7%)
+  6. bathymetry_m    0.0717 (7.2%)
+  7. depth           0.0179 (1.8%)
+
+INTERPRETATION
+--------------
+The model explains 80.1% of variance in aragonite saturation state.
+Predictions are accurate to within ±0.39 Omega units on average.
+
+Key findings:
+- Salinity is the dominant predictor (38.5% importance)
+- Satellite-derived features (SST, chlorophyll) contribute 31.4%
+- Geographic location (lat/lon) captures 21.2% of variance
+- Bathymetry adds 7.2% predictive power
+
+MODEL LIMITATIONS
+-----------------
+- Trained on 2,140 samples (performance may improve with more data)
+- Cross-validation shows ±0.041 variance in R² (small dataset effect)
+- Requires satellite data (clouds may limit coverage)
+- Best for surface waters (0-10m depth)
+
+USAGE
+-----
+To make predictions with confidence scores:
+
+    import pickle
+    import numpy as np
+    
+    with open('aragonite_model.pkl', 'rb') as f:
+        package = pickle.load(f)
+    
+    model = package['model']
+    predict_fn = package['predict_with_confidence']
+    
+    new_data = np.array([[35.0, 26.5, 0.15, 20.5, -155.2, 2500, 5.0]])
+    predictions, confidence = predict_fn(model, new_data)
+    
+    print(f"Prediction: {predictions[0]:.2f} Omega")
+    print(f"Confidence: {confidence[0]:.1f}%")
+
+Generated: 2026-01-27 15:31:10

@@ -1,0 +1,35 @@
+
+ARAGONITE SATURATION MODEL - TRAINING REPORT
+============================================================
+
+Dataset:
+  Total samples: 2,996
+  Clean samples: 2,140
+  Features: 7
+
+Model: Random Forest (Tuned)
+
+Best Hyperparameters:
+  max_depth: 15
+  max_features: sqrt
+  min_samples_leaf: 1
+  min_samples_split: 2
+  n_estimators: 300
+
+Performance:
+  Test R²:   0.8057
+  Test RMSE: 0.3823 Ω units
+  Test MAE:  0.2266 Ω units
+  
+  Cross-validation R²: 0.8013 ± 0.0500
+
+Feature Importance:
+  1. salinity       : 0.3652
+  2. modis_sst      : 0.1708
+  3. modis_chlora   : 0.1464
+  4. latitude       : 0.1214
+  5. longitude      : 0.1064
+  6. bathymetry_m   : 0.0690
+  7. depth          : 0.0209
+
+Training Time: 133.0s
