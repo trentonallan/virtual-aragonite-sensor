@@ -38,7 +38,7 @@ df_model = df[FEATURE_COLS + [TARGET_COL]].dropna()
 missing = len(df) - len(df_model)
 
 # Display summary
-print(f"\nData summary:")
+print(f"\nDATA SUMMARY")
 print(f"Total samples: {len(df):,}")
 print(f"Clean samples: {len(df_model):,}")
 print(f"Missing data: {missing:,} ({100*missing/len(df):.1f}%)")
@@ -59,7 +59,7 @@ X_train, X_val, y_train, y_val = train_test_split(
 )
 
 # Display data splits
-print("DATA SPLITS")
+print("\nDATA SPLITS")
 print(f"Training:   {len(X_train):,} samples ({100*len(X_train)/len(X):.1f}%)")
 print(f"Validation: {len(X_val):,} samples ({100*len(X_val)/len(X):.1f}%)")
 print(f"Test:       {len(X_test):,} samples ({100*len(X_test)/len(X):.1f}%)")
@@ -76,7 +76,7 @@ model = RandomForestRegressor(
     verbose=0
 )
 
-print("Training random forest...")
+print("\nTraining random forest...")
 start_time = time.time()
 model.fit(X_train, y_train)
 train_time = time.time() - start_time
@@ -97,7 +97,7 @@ val_rmse = np.sqrt(mean_squared_error(y_val, y_val_pred))
 val_mae = mean_absolute_error(y_val, y_val_pred)
 
 # Display results
-print("VALIDATION SET PERFORMANCE")
+print("\nVALIDATION SET PERFORMANCE")
 print(f"R^2: {val_r2:.4f}")
 print(f"RMSE: {val_rmse:.4f} Omega units")
 print(f"MAE: {val_mae:.4f} Omega units")
@@ -115,18 +115,19 @@ test_rmse = np.sqrt(mean_squared_error(y_test, y_test_pred))
 test_mae = mean_absolute_error(y_test, y_test_pred)
 
 # Display results
-print("TEST SET PERFORMANCE (FINAL)")
+print("\nTEST SET PERFORMANCE (FINAL)")
 print(f"R^2: {test_r2:.4f}")
 print(f"RMSE: {test_rmse:.4f} Omega units")
 print(f"MAE: {test_mae:.4f} Omega units")
-print(f"\nRelative error: {100*test_rmse/y_test.mean():.1f}% of mean")
+print(f"Relative error: {100*test_rmse/y_test.mean():.1f}% of mean")
 
 # 6. Cross Validation
-print("Running 10-fold CV (5 repeats)...")
+print("\nRunning 10-fold CV (5 repeats)...")
 
 # Set up K-fold cross validation
 cv = RepeatedKFold(n_splits=10, n_repeats=5, random_state=42)
 
+start_time = time.time()
 cv_scores = cross_val_score(
     model,
     np.vstack([X_train, X_val]),
@@ -136,13 +137,15 @@ cv_scores = cross_val_score(
     n_jobs=-1
 )
 
+cv_time = time.time() - start_time
+
 # Calculate 95% confidence interval
 ci_lower = cv_scores.mean() - 1.96*cv_scores.std()
 ci_upper = cv_scores.mean() + 1.96*cv_scores.std()
 
 # Display results
 print(f"Successfully completed CV in {cv_time:.1f}s\n")
-print(f"Cross-validation R^2 scores (50 folds):")
+print(f"CROSS-VALIDATION R^2 SCORES (50 folds):")
 print(f"Mean: {cv_scores.mean():.4f}")
 print(f"Std: {cv_scores.std():.4f}")
 print(f"Min: {cv_scores.min():.4f}")
@@ -155,6 +158,11 @@ importances = model.feature_importances_
 
 # Sort features by importance
 indices = np.argsort(importances)[::-1]
+
+# Display results
+print("\nFEATURE IMPORTANCE (ranked):")
+for i, idx in enumerate(indices, 1):
+    print(f"{i}. {FEATURE_COLS[idx]}: {importances[idx]:.3f}")
 
 # 8. Confidence score
 # Get predictions from all trees seperately
