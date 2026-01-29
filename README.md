@@ -1,6 +1,6 @@
 # Virtual Aragonite Sensor: ML-Based Ocean Acidification Monitoring
 
-Predicting coral reef building conditions from satellite data using machine learning.
+Machine learning pipeline for predicting coral reef health from satellite data.
 
 ## Problem
 
@@ -8,7 +8,7 @@ Ocean acidification threatens coral reefs by reducing aragonite saturation (Ωar
 
 ## Solution
 
-A neural network that predicts Ωarag from freely available satellite data (sea surface temperature, chlorophyll-a), enabling global ocean chemistry screening at zero marginal cost.
+An ML pipeline that predicts Ωarag from freely available satellite data (sea surface temperature, chlorophyll-a), enabling global ocean chemistry screening at zero marginal cost.
 
 ## Results
 
