@@ -274,6 +274,32 @@ print(f"\n✓ Confidence scores calculated")
 print(f"  Mean confidence: {confidence_scores.mean():.1f}%")
 print(f"  Range: {confidence_scores.min():.1f}% - {confidence_scores.max():.1f}%")
 
+# After calculating confidence scores, add:
+
+print("\n" + "="*60)
+print("CONFIDENCE DISTRIBUTION & RECOMMENDATIONS")
+print("="*60)
+
+high_conf_mask = confidence_scores > 80
+med_conf_mask = (confidence_scores >= 60) & (confidence_scores <= 80)
+low_conf_mask = confidence_scores < 60
+
+high_error = np.abs(y_test - y_test_pred)[high_conf_mask].mean()
+med_error = np.abs(y_test - y_test_pred)[med_conf_mask].mean()
+low_error = np.abs(y_test - y_test_pred)[low_conf_mask].mean()
+
+print(f"\n🟢 HIGH CONFIDENCE (>80%): {high_conf_mask.sum()} predictions ({100*high_conf_mask.sum()/len(confidence_scores):.1f}%)")
+print(f"   Mean absolute error: {high_error:.3f} Omega units")
+print(f"   → Suitable for management decisions")
+
+print(f"\n🟡 MEDIUM CONFIDENCE (60-80%): {med_conf_mask.sum()} predictions ({100*med_conf_mask.sum()/len(confidence_scores):.1f}%)")
+print(f"   Mean absolute error: {med_error:.3f} Omega units")
+print(f"   → Use for monitoring priorities")
+
+print(f"\n🔴 LOW CONFIDENCE (<60%): {low_conf_mask.sum()} predictions ({100*low_conf_mask.sum()/len(confidence_scores):.1f}%)")
+print(f"   Mean absolute error: {low_error:.3f} Omega units")
+print(f"   → Recommend field verification")
+
 # ============================================================================
 # 10. PREDICTION EXAMPLES WITH CONFIDENCE
 # ============================================================================
