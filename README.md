@@ -61,7 +61,7 @@ Model includes a `predict_with_confidence()` function that returns both predicti
 ## Project Structure
 ```
 acid-project/
-├── data/
+├── data/                 # Created by training pipeline*
 │   ├── raw/              # Downloaded datasets
 │   └── processed/        # Cleaned, merged data
 ├── scripts/
@@ -81,6 +81,8 @@ acid-project/
 │   └── sample_distribution.png
 └── README.md
 ```
+
+*Note: data/ directory is not included in the repository. It will be automatically created when running the training pipeline.*
 
 ## Usage
 
