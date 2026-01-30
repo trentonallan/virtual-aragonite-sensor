@@ -267,7 +267,7 @@ Where:
 - **Ω = 1**: Seawater is *saturated* - equilibrium (no net formation or dissolution)
 - **Ω < 1**: Seawater is *undersaturated* - existing aragonite will dissolve
 
-The solubility product Ksp increases with depth (pressure) and decreases with temperature, which is why cold, deep waters are naturally more corrosive to carbonates.
+Ksp increases with depth (higher pressure) and decreases with temperature. This is why cold, deep water dissolves aragonite more easily than warm surface water.
 
 **Biological Thresholds:**
 - **Ω > 3.5**: Excellent coral growth and calcification
