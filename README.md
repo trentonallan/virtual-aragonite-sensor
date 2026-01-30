@@ -2,6 +2,20 @@
 
 Machine learning pipeline for predicting coral reef health from satellite data.
 
+## Table of Contents
+- [Problem](#problem)
+- [Solution](#solution)
+- [Results](#results)
+- [Methodology](#methodology)
+  - [Data Sources](#data-sources)
+  - [Model Architecture](#model-architecture)
+- [Usage](#usage)
+  - [Option 1: Use Pre-trained Model](#option-1-use-pre-trained-model)
+  - [Option 2: Train From Scratch](#option-2-train-from-scratch)
+- [Performance Analysis](#performance-analysis)
+- [Scientific Context](#scientific-context)
+- [References](#references)
+
 ## Problem
 
 Ocean acidification threatens coral reefs by reducing aragonite saturation (Ωarag), but measuring it requires expensive research cruises ($10,000+/day). This creates a critical bottleneck for coral restoration projects that need to identify suitable planting sites.
