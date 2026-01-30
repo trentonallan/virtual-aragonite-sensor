@@ -129,7 +129,8 @@ print(f"Confidence: {confidence[0]:.1f}%")
 
 ## Performance Analysis
 
-<table style="border-collapse: collapse; border: none; width: 100%;">
+<table style="border-collapse: collapse; border: none;">
+<tbody style="border: none;">
 <tr style="border: none;">
 <td width="45%" style="border: none; vertical-align: top; padding-right: 20px;">
 
@@ -151,6 +152,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 
 </td>
 </tr>
+</tbody>
 </table>
 
 <p align="center">
