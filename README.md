@@ -82,6 +82,7 @@ virtual-aragonite-sensor/
 │   ├── feature_importance.png
 │   ├── metrics_comparison.png
 │   ├── prediction_uncertainty.png
+│   ├── predictions_vs_actual.png
 │   ├── residuals.png
 │   └── sample_distribution.png
 ├── .gitignore
