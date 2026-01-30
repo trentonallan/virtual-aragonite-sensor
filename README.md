@@ -315,6 +315,6 @@ MIT License - Free to use for research and conservation
 **Trenton Allan**  
 Northeastern University - B.S. Computer Science (AI concentration)
 
-📧 allan.tr@northeastern.edu  
-💼 [linkedin.com/in/trentonallan](https://linkedin.com/in/trentonallan)  
-🔗 [github.com/trentonallan](https://github.com/trentonallan)
+- 📧 Email: allan.tr@northeastern.edu
+- 💼 LinkedIn: [linkedin.com/in/trentonallan](https://linkedin.com/in/trentonallan)
+- 🔗 GitHub: [github.com/trentonallan](https://github.com/trentonallan)
