@@ -288,6 +288,8 @@ Ksp increases with depth (higher pressure) and decreases with temperature. This 
 
 ### Why This Matters
 
+Ocean pH has dropped by 0.1 units since pre-industrial times (a 30% increase in acidity) due to rising atmospheric CO₂, and projections suggest 50% of coral reefs could be lost by 2050 (IPCC).
+
 Coral restoration organizations typically face a brutal economic trade-off: site assessment requires expensive research cruises ($10k+/day), but they need to evaluate dozens of potential locations before committing $100k-$1M to restoration work.
 
 This tool doesn't replace direct ocean chemistry measurements - those are the gold standard. Instead, it enables applications that weren't economically feasible before:
@@ -299,10 +301,12 @@ Conservation organizations can now screen potential sites at zero cost, then dir
 
 ## References
 
-1. Feely et al. (2004) - Ocean acidification impact on CaCO₃
-2. GLODAP v2.2023 - Global ocean carbon database
-3. MODIS-Aqua - NASA ocean color mission
-4. Mucci (1983) - Aragonite solubility in seawater
+1. IPCC (2021) - Climate Change 2021: The Physical Science Basis
+2. Feely et al. (2004) - Ocean acidification impact on CaCO₃
+3. GLODAP v2.2023 - Global ocean carbon database
+4. MODIS-Aqua - NASA ocean color mission
+5. ETOPO1 - NOAA global relief model
+6. Mucci (1983) - Aragonite solubility in seawater
 
 ## Acknowledgments
 
