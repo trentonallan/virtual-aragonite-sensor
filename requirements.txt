@@ -1,30 +1,20 @@
 # Core scientific stack
 numpy>=1.24.0
 pandas>=2.0.0
-xarray>=2023.1.0  # For handling netCDF satellite data
-netCDF4>=1.6.0
+xarray>=2023.1.0
 
-# Geospatial
-geopandas>=0.13.0
-rasterio>=1.3.0
-cartopy>=0.22.0  # For maps
-pyproj>=3.5.0
-
-# Data acquisition
+# Geospatial/Bathymetry
 requests>=2.31.0
-earthaccess>=0.5.0  # NASA data access
-erddapy>=2.0.0  # NOAA ERDDAP servers
+
+# Google Earth Engine (for satellite data)
+earthengine-api>=0.1.0
 
 # Machine Learning
-torch>=2.0.0
 scikit-learn>=1.3.0
-optuna>=3.0.0  # Hyperparameter tuning
 
 # Visualization
 matplotlib>=3.7.0
 seaborn>=0.12.0
-plotly>=5.14.0
 
-# Chemistry calculations
-PyCO2SYS>=1.8.0  # CO2 system calculations
-gsw>=3.6.0  # Seawater properties
+# Progress bars
+tqdm>=4.65.0
