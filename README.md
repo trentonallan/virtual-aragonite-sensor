@@ -146,7 +146,7 @@ print(f"Predicted Ωarag: {omega_pred:.2f}")
 - **Range**: 0.6947 - 0.8620
 - **95% CI**: [0.7220, 0.8830]
 
-The low standard deviation (0.04) indicates consistent performance across different data subsets, confirming the model's stability and reliability for operational use.
+The low standard deviation (0.04) indicates consistent performance across different data subsets, confirming model stability.
 
 ### Feature Importance
 Analysis via Random Forest feature importance reveals:
