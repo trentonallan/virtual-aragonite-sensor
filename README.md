@@ -283,4 +283,4 @@ MIT License - Free to use for research and conservation
 ## Author
 
 Trenton Allan - Northeastern University
-B.S. Computer Science (AI concentration) | allan.tr@northeastern.edu | 
+B.S. Computer Science (AI concentration) | [allan.tr@northeastern.edu] | [LinkedIn](https://linkedin.com/in/trentonallan) 
