@@ -298,9 +298,9 @@ Where:
 - **Ksp** is the solubility product constant, the theoretical ion concentration product at which aragonite would be in equilibrium (neither forming nor dissolving)
 
 **Interpreting Ω:**
-- **Ω > 1**: Seawater is *supersaturated* - aragonite formation is thermodynamically favorable
-- **Ω = 1**: Seawater is *saturated* - equilibrium (no net formation or dissolution)
-- **Ω < 1**: Seawater is *undersaturated* - existing aragonite will dissolve
+- **Ω > 1**: Seawater is *supersaturated*: aragonite formation is thermodynamically favorable
+- **Ω = 1**: Seawater is *saturated*: equilibrium (no net formation or dissolution)
+- **Ω < 1**: Seawater is *undersaturated*: existing aragonite will dissolve
 
 Ksp increases with depth (higher pressure) and decreases with temperature. This is why cold, deep water dissolves aragonite more easily than warm surface water.
 
@@ -309,24 +309,24 @@ Ksp increases with depth (higher pressure) and decreases with temperature. This 
 - **Ω = 3.0-3.5**: Good conditions, healthy reefs
 - **Ω = 2.5-3.0**: Marginal conditions, reduced growth
 - **Ω < 2.5**: Stressed corals, increased mortality risk
-- **Ω < 1.0**: Undersaturated - dissolution of existing structures
+- **Ω < 1.0**: Undersaturated, dissolution of existing structures
 
 ### Why This Matters
 
-Ocean pH has dropped by 0.1 units since pre-industrial times (a 30% increase in acidity) due to rising atmospheric CO₂, and projections suggest 50% of coral reefs could be lost by 2050 (IPCC).
+Ocean pH has dropped by 0.1 units since pre-industrial times (a 30% increase in acidity) due to rising atmospheric CO₂, and projections suggest 70-90% of coral reefs could be lost by 2050 (IPCC, 2018).
 
 Coral restoration organizations typically face a brutal economic trade-off: site assessment requires expensive research cruises ($10k+/day), but they need to evaluate dozens of potential locations before committing $100k-$1M to restoration work.
 
-This tool doesn't replace direct ocean chemistry measurements - those are the gold standard. Instead, it enables applications that weren't economically feasible before:
-- **Global screening**: Survey 10× more sites in initial assessment
+This tool doesn't replace direct ocean chemistry measurements. Instead, it enables applications that weren't economically feasible before:
+- **Global screening**: Survey many more sites in initial assessment
 - **Continuous monitoring**: Track changes over time without repeated cruises  
-- **Rapid spatial mapping**: Identify promising regions across entire coastlines
+- **Quick spatial mapping**: Identify promising regions across entire coastlines
 
-Conservation organizations can now screen potential sites at zero cost, then direct their limited budget toward precise measurements at the most promising locations. In an acidifying ocean where 50% of reefs may be lost by 2050, being able to identify sites where corals are most likely to survive is critical.
+Conservation organizations can use this tool to screen potential sites at zero cost, then direct their limited budget toward precise measurements at the most promising locations. In an acidifying ocean where 90% of reefs may be lost by 2050, being able to identify sites where corals are most likely to survive is critical.
 
 ## References
 
-1. IPCC (2021) - Climate Change 2021: The Physical Science Basis
+1. IPCC (2018) - Special Report on Global Warming of 1.5°C
 2. Feely et al. (2004) - Ocean acidification impact on CaCO₃
 3. GLODAP v2.2023 - Global ocean carbon database
 4. MODIS-Aqua - NASA ocean color mission
