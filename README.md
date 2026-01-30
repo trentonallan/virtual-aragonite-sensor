@@ -92,22 +92,46 @@ acid-project/
 
 ### Prerequisites
 ```bash
+# Install dependencies
 pip install -r requirements.txt
-earthengine authenticate  # For satellite data
+
+# Authenticate with Google Earth Engine (required for satellite data)
+earthengine authenticate
 ```
 
-### Training Pipeline
+### Quick Start - Full Pipeline
+
+Run the complete pipeline to download data and train the model:
 ```bash
-# 1. Download ocean chemistry data
+# Mac/Linux
+./run_pipeline.sh
+
+# Windows
+run_pipeline.bat
+```
+
+The pipeline will:
+1. Download and process GLODAP ocean chemistry data (~3,000 samples)
+2. Add ETOPO1 bathymetry data (~400MB download)
+3. Extract MODIS satellite features via Google Earth Engine (10-60 minutes)
+4. Train Random Forest model
+
+**Note:** Step 3 (satellite extraction) requires Google Earth Engine authentication and may take 10-60 minutes depending on network speed.
+
+### Manual Training Pipeline
+
+If you prefer to run steps individually:
+```bash
+# 1. Process ocean chemistry data
 python scripts/01_download_glodap.py
 
-# 2. Download bathymetry data
+# 2. Add bathymetry data
 python scripts/02_download_bathymetry.py
 
-# 3. Extract satellite data
+# 3. Extract satellite data (requires GEE authentication)
 python scripts/03_extract_satellite_gee.py
 
-# 4. Train model
+# 4. Train model and generate visualizations
 python scripts/04_train_model.py
 ```
 
@@ -116,16 +140,20 @@ python scripts/04_train_model.py
 import pickle
 import numpy as np
 
-with open('aragonite_model.pkl', 'rb') as f:
+# Load trained model
+with open('models/aragonite_model.pkl', 'rb') as f:
     package = pickle.load(f)
 
 model = package['model']
 predict_fn = package['predict_with_confidence']
 
-new_data = np.array([[35.0, 26.5, 0.15, 20.5, -155.2, 2500, 5.0]])
+# Input: [salinity, sst, chlor_a, latitude, longitude, bathymetry_m, depth]
+new_data = np.array([[35.0, 26.5, 0.15, 20.5, -155.2, -2500, 5.0]])
+
+# Get prediction with confidence score
 predictions, confidence = predict_fn(model, new_data)
 
-print(f"Prediction: {predictions[0]:.2f} Omega")
+print(f"Predicted Ωarag: {predictions[0]:.2f}")
 print(f"Confidence: {confidence[0]:.1f}%")
 ```
 
