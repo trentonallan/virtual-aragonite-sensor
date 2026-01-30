@@ -65,12 +65,12 @@ acid-project/
 │   ├── raw/              # Downloaded datasets
 │   └── processed/        # Cleaned, merged data
 ├── scripts/
-│   ├── 01_download_glodap.py      # Get ocean chemistry data
-│   ├── 02_extract_satellite_gee.py # Extract satellite features
-│   ├── 04_add_bathymetry.py       # Add seafloor depth
-│   └── 05_train_with_bathymetry.py # Train final model
+│   ├── 01_download_glodap.py           # Get ocean chemistry data
+│   ├── 02_download_bathymetry.py       # Get bathymetry data
+│   ├── 03_extract_satellite_gee.py     # Extract satellite features
+│   └── 04_train_model.py               # Train model
 ├── models/
-│   └── model_with_bathymetry.pth  # Trained model
+│   └── aragonite_model.pkl       # Trained model
 ├── results/
 │   ├── predictions_with_bathymetry.png
 │   └── training_curves.png
