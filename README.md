@@ -249,7 +249,7 @@ Errors follow a roughly normal distribution centered at zero, indicating the mod
 - Enables rapid site prioritization before committing to expensive field validation
 - 9% error relative to mean values is good enough to eliminate obviously unsuitable locations
 
-**Use case**: Screen 50 potential restoration sites using satellite data → narrow to 5 promising candidates → conduct detailed in-situ measurements at those 5 locations. This inverts the typical workflow where organizations can only afford to measure 5 sites total.
+**Use case**: Screen 50 potential restoration sites using satellite data → narrow to 5 promising candidates → conduct detailed in-situ measurements at those 5 locations. Instead of measuring only 5 sites blindly, organizations can pre-screen 50 and measure the best 5.
 
 ### Limitations
 - **Requires salinity data**: Not available from satellites. Users must provide either in-situ measurements or climatological estimates (ex: World Ocean Atlas)
