@@ -169,30 +169,39 @@ The dominance of salinity aligns with marine chemistry theory, as it directly co
 
 ## Scientific Context
 
-### Aragonite Saturation State (Ωarag)
+### Ocean Acidification & Coral Reefs
+
+When atmospheric CO₂ dissolves in seawater, it forms carbonic acid (H₂CO₃), which dissociates and reduces the availability of carbonate ions (CO₃²⁻):
 ```
-Ω = [Ca²⁺][CO₃²⁻] / Ksp
+CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻ ⇌ 2H⁺ + CO₃²⁻
 ```
 
-- **Ω > 3.5**: Excellent coral growth conditions
-- **Ω = 3.0-3.5**: Good conditions
-- **Ω < 3.0**: Stressed corals
-- **Ω < 1.0**: Undersaturated (dissolution)
+This matters because corals build their skeletons from aragonite (a form of calcium carbonate, CaCO₃), which requires carbonate ions:
+```
+Ca²⁺ + CO₃²⁻ → CaCO₃ (aragonite)
+```
+
+### Aragonite Saturation State (Ωarag)
+
+The aragonite saturation state quantifies whether seawater chemistry favors aragonite formation or dissolution:
+```
+Ωarag = [Ca²⁺][CO₃²⁻] / Ksp
+```
+
+Where Ksp is the solubility product (temperature and pressure dependent).
+
+**Biological Thresholds:**
+- **Ω > 3.5**: Excellent coral growth and calcification
+- **Ω = 3.0-3.5**: Good conditions, healthy reefs
+- **Ω = 2.5-3.0**: Marginal conditions, reduced growth
+- **Ω < 2.5**: Stressed corals, increased mortality risk
+- **Ω < 1.0**: Undersaturated - net dissolution of existing structures
 
 ### Why This Matters
 - 50% of coral reefs could be lost by 2050 (IPCC)
 - Restoration projects need $100k-$1M+ per site
 - Site assessment is a major bottleneck
 - This tool enables free global screening
-
-## Future Work
-
-- [ ] Add depth-aware predictions (predict Ω at 5-30m, not just surface)
-- [ ] Implement Physics-Informed Neural Network (PINN) constraints
-- [ ] Temporal forecasting (predict future acidification)
-- [ ] Real-time monitoring dashboard
-- [ ] Uncertainty quantification (prediction intervals)
-- [ ] Integration with coral restoration databases
 
 ## References
 
