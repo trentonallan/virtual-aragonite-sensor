@@ -129,6 +129,9 @@ print(f"Confidence: {confidence[0]:.1f}%")
 
 ## Performance Analysis
 
+<table>
+ <tr>
+  <td width="40%">
 ### Model Metrics
 - **Validation R²**: 0.743
 - **Test R²**: 0.801
@@ -136,10 +139,14 @@ print(f"Confidence: {confidence[0]:.1f}%")
 - **Test RMSE**: 0.387 Ω units
 - **Test MAE**: 0.233 Ω units
 - **Relative error**: 9.0% of mean Ωarag value
-
+</td>
+<td width="60%">
 <p align="center">
-  <img src="visualizations/predictions_vs_actual.png" width="500">
+  <img src="visualizations/predictions_vs_actual.png" width="450">
 </p>
+</td>
+</tr>
+</table>
 
 <p align="center">
   <img src="visualizations/metrics_comparison.png" width="800">
