@@ -132,6 +132,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 <table style="border: none;">
  <tr>
   <td width="40%">
+   
 ### Model Metrics
 - **Validation R²**: 0.743
 - **Test R²**: 0.801
@@ -139,6 +140,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 - **Test RMSE**: 0.387 Ω units
 - **Test MAE**: 0.233 Ω units
 - **Relative error**: 9.0% of mean Ωarag value
+
 </td>
 <td width="60%">
 <p align="center">
