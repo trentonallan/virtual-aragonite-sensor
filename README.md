@@ -129,9 +129,9 @@ print(f"Confidence: {confidence[0]:.1f}%")
 
 ## Performance Analysis
 
-<table border="0">
+<table style="border: none;">
 <tr>
-<td width="50%" border="0">
+<td width="40%" style="border: none;">
 
 ### Model Metrics
 
@@ -143,7 +143,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 - **Relative error**: 9.0% of mean Ωarag value
 
 </td>
-<td width="50%" border="0">
+<td width="60%" style="border: none;">
 
 <p align="center">
   <img src="visualizations/predictions_vs_actual.png" width="450">
