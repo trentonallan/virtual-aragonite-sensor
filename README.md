@@ -139,7 +139,10 @@ print(f"Predicted Ωarag: {omega_pred:.2f}")
 - **Test MAE**: 0.23 Ω units
 - **Relative error**: 9.0% of mean Ωarag value
 
-<img src="visualizations/predictions_vs_actual.png" width="300">
+<p align="center">
+  <img src="visualizations/predictions_vs_actual.png" width="500">
+</p>
+
 
 ### Cross-Validation Results
 10-fold cross-validation with 5 repeats (50 total folds) demonstrates robust generalization:
