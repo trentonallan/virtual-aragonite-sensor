@@ -102,31 +102,20 @@ python scripts/04_train_model.py
 
 ### Making Predictions
 ```python
-import torch
+import pickle
 import numpy as np
 
-# Load model
-checkpoint = torch.load('models/model_with_bathymetry.pth', weights_only=False)
-model = AragonitePredictor()
-model.load_state_dict(checkpoint['model_state_dict'])
+with open('aragonite_model.pkl', 'rb') as f:
+    package = pickle.load(f)
 
-# Predict for a location
-features = np.array([[
-    28.5,    # SST (°C)
-    0.08,    # Chlorophyll-a (mg/m³)
-    35.2,    # Salinity
-    25.0,    # Bathymetry (m)
-    -17.5,   # Latitude
-    -149.8,  # Longitude
-    5.0      # Depth (m)
-]])
+model = package['model']
+predict_fn = package['predict_with_confidence']
 
-# Scale and predict
-features_scaled = checkpoint['scaler_X'].transform(features)
-omega_pred = model(torch.FloatTensor(features_scaled)).item()
-omega_pred = checkpoint['scaler_y'].inverse_transform([[omega_pred]])[0][0]
+new_data = np.array([[35.0, 26.5, 0.15, 20.5, -155.2, 2500, 5.0]])
+predictions, confidence = predict_fn(model, new_data)
 
-print(f"Predicted Ωarag: {omega_pred:.2f}")
+print(f"Prediction: {predictions[0]:.2f} Omega")
+print(f"Confidence: {confidence[0]:.1f}%")
 ```
 
 ## Performance Analysis
