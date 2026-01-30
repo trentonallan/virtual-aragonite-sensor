@@ -7,14 +7,13 @@ Machine learning pipeline for predicting coral reef health from satellite data.
 - [Solution](#solution)
 - [Results](#results)
 - [Methodology](#methodology)
-  - [Data Sources](#data-sources)
-  - [Model Architecture](#model-architecture)
+- [Project Structure](#project-structure)
 - [Usage](#usage)
-  - [Option 1: Use Pre-trained Model](#option-1-use-pre-trained-model)
-  - [Option 2: Train From Scratch](#option-2-train-from-scratch)
 - [Performance Analysis](#performance-analysis)
 - [Scientific Context](#scientific-context)
 - [References](#references)
+- [License](#license)
+- [Author](#author)
 
 ## Problem
 
