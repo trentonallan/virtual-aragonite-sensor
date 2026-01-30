@@ -139,6 +139,7 @@ model = package['model']
 predict_fn = package['predict_with_confidence']
 
 # Input: [salinity, sst, chlor_a, latitude, longitude, bathymetry_m, depth]
+# Note: Salinity is not available from satellites. Must come from in-situ measurements or climatological data (ex: World Ocean Atlas) 
 new_data = np.array([[35.0, 26.5, 0.15, 20.5, -155.2, -2500, 5.0]])
 
 # Get prediction with confidence score
@@ -218,16 +219,18 @@ Residual plot shows random scatter around zero with no systematic bias, confirmi
 Error distribution is approximately normal with mean near zero, validating statistical assumptions.
 
 ### Practical Accuracy
-- Reliably distinguishes good sites (Ω > 3.5) from poor ones (Ω < 2.5)
+- Reliably distinguishes excellent sites (Ω > 3.5) from poor ones (Ω < 2.5) - sufficient for initial screening
 - RMSE of 0.39 is comparable to measurement uncertainty (~0.2)
-- Good enough for initial screening, though not a replacement for in-situ validation
-- 9% error relative to mean values
+- Enables rapid site prioritization before committing to expensive field validation
+- 9% error relative to mean values - good enough to eliminate obviously unsuitable locations
+
+**Use case**: Screen 50 potential restoration sites using satellite data → narrow to 5 promising candidates → conduct detailed in-situ measurements at those 5 locations. This inverts the typical workflow where organizations can only afford to measure 5 sites total.
 
 ### Limitations
-- Requires in-situ salinity data (not available from satellites)
+- **Requires salinity data**: Not available from satellites. Users must provide either in-situ measurements or climatological estimates (ex: World Ocean Atlas)
 - Only validated on surface waters (0-10m depth)
 - Performance may degrade in extreme environments (hypersaline areas, brackish water)
-- Training data biased toward well-studied regions
+- Training data biased toward well studied regions
 
 <details>
 <summary><b>Additional Visualizations</b></summary>
@@ -284,10 +287,15 @@ Ksp increases with depth (higher pressure) and decreases with temperature. This 
 - **Ω < 1.0**: Undersaturated - net dissolution of existing structures
 
 ### Why This Matters
-- 50% of coral reefs could be lost by 2050 (IPCC)
-- Restoration projects need $100k-$1M+ per site
-- Site assessment is a major bottleneck
-- This tool enables free global screening
+
+Coral restoration organizations typically face a brutal economic trade-off: site assessment requires expensive research cruises ($10k+/day), but they need to evaluate dozens of potential locations before committing $100k-$1M to restoration work.
+
+This tool doesn't replace direct ocean chemistry measurements - those are the gold standard. Instead, it enables applications that weren't economically feasible before:
+- **Global screening**: Survey 10× more sites in initial assessment
+- **Continuous monitoring**: Track changes over time without repeated cruises  
+- **Rapid spatial mapping**: Identify promising regions across entire coastlines
+
+Conservation organizations can now screen potential sites at zero cost, then direct their limited budget toward precise measurements at the most promising locations. In an acidifying ocean where 50% of reefs may be lost by 2050, being able to identify sites where corals are most likely to survive is critical.
 
 ## References
 
