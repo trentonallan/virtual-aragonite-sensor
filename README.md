@@ -282,5 +282,5 @@ MIT License - Free to use for research and conservation
 
 ## Author
 
-Trenton Hatch - Northeastern University
-Computer Science (AI concentration) | allan.tr@northeastern.edu
+Trenton Allan - Northeastern University
+B.S. Computer Science (AI concentration) | allan.tr@northeastern.edu | 
