@@ -129,7 +129,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 
 ## Performance Analysis
 
-<img src="visualizations/predictions_vs_actual.png" width="450" align="right" style="margin-right: 40px;">
+<img src="visualizations/predictions_vs_actual.png" width="450" align="right">
 
 ### Model Metrics
 
