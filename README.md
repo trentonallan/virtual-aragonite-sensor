@@ -280,7 +280,6 @@ Ksp increases with depth (higher pressure) and decreases with temperature. This 
 - **Ω = 2.5-3.0**: Marginal conditions, reduced growth
 - **Ω < 2.5**: Stressed corals, increased mortality risk
 - **Ω < 1.0**: Undersaturated - net dissolution of existing structures
-```
 
 ### Why This Matters
 - 50% of coral reefs could be lost by 2050 (IPCC)
