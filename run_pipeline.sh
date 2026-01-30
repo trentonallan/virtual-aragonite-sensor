@@ -5,9 +5,7 @@
 
 set -e  # Exit on any error
 
-echo "============================================"
 echo "Virtual Aragonite Sensor Training Pipeline"
-echo "============================================"
 echo ""
 
 # Create directories
@@ -38,8 +36,6 @@ echo "Step 4/4: Training model and generating visualizations..."
 python scripts/04_train_model.py
 
 echo ""
-echo "============================================"
 echo "Pipeline complete!"
-echo "============================================"
 echo "Model saved to: models/aragonite_model.pkl"
 echo "Visualizations saved to: results/"
