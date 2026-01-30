@@ -45,7 +45,7 @@ An ML pipeline that predicts Ωarag from freely available satellite data (sea su
 
 ### Model Architecture
 
-I used a Random Forest (100 trees, max depth 15) because it handles small datasets well and gives built-in feature importance without tuning. The model splits data 60/20/20 for training/validation/test and uses 10-fold cross-validation to verify performance.
+I used a Random Forest (100 trees, max depth 15) because it handles small datasets well and automatically ranks feature importance during training. The model splits data 60/20/20 for training/validation/test and uses 10-fold cross-validation to verify performance.
 
 The forest approach beat neural networks here because:
 - More robust on 2,140 samples
