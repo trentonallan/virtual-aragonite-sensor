@@ -295,7 +295,7 @@ The aragonite saturation state quantifies whether seawater chemistry favors arag
 
 Where:
 - **[Ca²⁺]** and **[CO₃²⁻]** are the actual concentrations of calcium and carbonate ions in seawater
-- **Ksp** is the solubility product constant - the theoretical ion concentration product at which aragonite would be in equilibrium (neither forming nor dissolving)
+- **Ksp** is the solubility product constant, the theoretical ion concentration product at which aragonite would be in equilibrium (neither forming nor dissolving)
 
 **Interpreting Ω:**
 - **Ω > 1**: Seawater is *supersaturated* - aragonite formation is thermodynamically favorable
