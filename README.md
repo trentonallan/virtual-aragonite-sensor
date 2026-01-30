@@ -70,8 +70,8 @@ virtual-aragonite-sensor/
 │   ├── raw/              # Downloaded datasets
 │   └── processed/        # Cleaned, merged data
 ├── scripts/
-│   ├── 01_download_glodap.py           # Get ocean chemistry data
-│   ├── 02_download_bathymetry.py       # Get bathymetry data
+│   ├── 01_download_glodap.py           # Process ocean chemistry data
+│   ├── 02_download_bathymetry.py       # Add bathymetry data
 │   ├── 03_extract_satellite_gee.py     # Extract satellite features
 │   └── 04_train_model.py               # Train model
 ├── models/
