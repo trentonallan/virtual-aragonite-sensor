@@ -82,7 +82,7 @@ acid-project/
 └── README.md
 ```
 
-*Note: data/ directory is not included in the repository. It will be automatically created when running the training pipeline.*
+*'*'Note: data/ directory is not included in the repository. It will be automatically created when running the training pipeline.*
 
 ## Usage
 
