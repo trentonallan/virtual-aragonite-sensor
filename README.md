@@ -247,7 +247,7 @@ Errors follow a roughly normal distribution centered at zero, indicating the mod
 - Reliably distinguishes excellent sites (Ω > 3.5) from poor ones (Ω < 2.5) which is sufficient for initial screening
 - RMSE of 0.39 is comparable to measurement uncertainty (~0.2)
 - Enables rapid site prioritization before committing to expensive field validation
-- 9% error relative to mean values - good enough to eliminate obviously unsuitable locations
+- 9% error relative to mean values is good enough to eliminate obviously unsuitable locations
 
 **Use case**: Screen 50 potential restoration sites using satellite data → narrow to 5 promising candidates → conduct detailed in-situ measurements at those 5 locations. This inverts the typical workflow where organizations can only afford to measure 5 sites total.
 
