@@ -129,8 +129,9 @@ print(f"Confidence: {confidence[0]:.1f}%")
 
 ## Performance Analysis
 
-<div style="display: flex; align-items: flex-start;">
-<div style="flex: 1; padding-right: 10px;">
+<table style="border-collapse: collapse; border: none; width: 100%;">
+<tr style="border: none;">
+<td width="45%" style="border: none; vertical-align: top; padding-right: 20px;">
 
 ### Model Metrics
 
@@ -141,15 +142,16 @@ print(f"Confidence: {confidence[0]:.1f}%")
 - **Test MAE**: 0.233 Ω units
 - **Relative error**: 9.0% of mean Ωarag value
 
-</div>
-<div style="flex: 1;">
+</td>
+<td width="55%" style="border: none; vertical-align: top;">
 
 <p align="center">
-  <img src="visualizations/predictions_vs_actual.png" width="90">
+  <img src="visualizations/predictions_vs_actual.png" width="100%">
 </p>
 
-</div>
-</div>
+</td>
+</tr>
+</table>
 
 <p align="center">
   <img src="visualizations/metrics_comparison.png" width="800">
