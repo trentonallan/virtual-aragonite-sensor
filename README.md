@@ -57,7 +57,7 @@ The model includes a `predict_with_confidence()` function that returns predictio
 ### Input Features
 1. Sea Surface Temperature (MODIS SST)
 2. Chlorophyll-a concentration (MODIS)
-3. Salinity (in-situ)
+3. Salinity (in-situ or climatology)
 4. Bathymetry (seafloor depth)
 5. Latitude
 6. Longitude
