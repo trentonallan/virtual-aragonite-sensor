@@ -309,7 +309,7 @@ Ksp increases with depth (higher pressure) and decreases with temperature. This 
 - **Ω = 3.0-3.5**: Good conditions, healthy reefs
 - **Ω = 2.5-3.0**: Marginal conditions, reduced growth
 - **Ω < 2.5**: Stressed corals, increased mortality risk
-- **Ω < 1.0**: Undersaturated - net dissolution of existing structures
+- **Ω < 1.0**: Undersaturated - dissolution of existing structures
 
 ### Why This Matters
 
