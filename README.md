@@ -235,7 +235,7 @@ Salinity's dominance makes sense because it directly controls carbonate ion conc
   <img src="visualizations/residuals.png" width="600">
 </p>
 
-Residuals scatter randomly around zero - no obvious patterns where the model consistently misses high or low.
+Residuals scatter randomly around zero with no obvious patterns where the model consistently misses high or low.
 
 <p align="center">
   <img src="visualizations/error_distribution.png" width="600">
