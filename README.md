@@ -233,7 +233,16 @@ The aragonite saturation state quantifies whether seawater chemistry favors arag
 Ωarag = [Ca²⁺][CO₃²⁻] / Ksp
 ```
 
-Where Ksp is the solubility product (temperature and pressure dependent).
+Where:
+- **[Ca²⁺]** and **[CO₃²⁻]** are the actual concentrations of calcium and carbonate ions in seawater
+- **Ksp** is the solubility product constant - the theoretical ion concentration product at which aragonite would be in equilibrium (neither forming nor dissolving)
+
+**Interpreting Ω:**
+- **Ω > 1**: Seawater is *supersaturated* - aragonite formation is thermodynamically favorable
+- **Ω = 1**: Seawater is *saturated* - equilibrium (no net formation or dissolution)
+- **Ω < 1**: Seawater is *undersaturated* - existing aragonite will dissolve
+
+The solubility product Ksp increases with depth (pressure) and decreases with temperature, which is why cold, deep waters are naturally more corrosive to carbonates.
 
 **Biological Thresholds:**
 - **Ω > 3.5**: Excellent coral growth and calcification
@@ -241,6 +250,7 @@ Where Ksp is the solubility product (temperature and pressure dependent).
 - **Ω = 2.5-3.0**: Marginal conditions, reduced growth
 - **Ω < 2.5**: Stressed corals, increased mortality risk
 - **Ω < 1.0**: Undersaturated - net dissolution of existing structures
+```
 
 ### Why This Matters
 - 50% of coral reefs could be lost by 2050 (IPCC)
