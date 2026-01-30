@@ -130,7 +130,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 ## Performance Analysis
 
 <div style="display: flex; align-items: flex-start;">
-<div style="flex: 1; padding-right: 20px;">
+<div style="flex: 1; padding-right: 10px;">
 
 ### Model Metrics
 
@@ -145,7 +145,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 <div style="flex: 1;">
 
 <p align="center">
-  <img src="visualizations/predictions_vs_actual.png" width="450">
+  <img src="visualizations/predictions_vs_actual.png" width="400">
 </p>
 
 </div>
