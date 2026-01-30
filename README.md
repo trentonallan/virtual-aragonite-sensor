@@ -140,7 +140,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 </p>
 
 <p align="center">
-  <img src="visualizations/metrics_comparison.png" width="700">
+  <img src="visualizations/metrics_comparison.png" width="800">
 </p>
 
 
