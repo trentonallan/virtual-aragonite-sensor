@@ -132,6 +132,10 @@ print(f"Confidence: {confidence[0]:.1f}%")
   <img src="visualizations/predictions_vs_actual.png" width="500">
 </p>
 
+<p align="center">
+  <img src="visualizations/metrics_comparison.png" width="600">
+</p>
+
 
 ### Cross-Validation Results
 10-fold cross-validation with 5 repeats (50 total folds) demonstrates robust generalization:
@@ -140,10 +144,19 @@ print(f"Confidence: {confidence[0]:.1f}%")
 - **Range**: 0.6947 - 0.8620
 - **95% CI**: [0.7220, 0.8830]
 
+<p align="center">
+  <img src="visualizations/cv_distribution.png" width="600">
+</p>
+
 The low standard deviation (0.04) indicates consistent performance across different data subsets, confirming model stability.
 
 ### Feature Importance
 Analysis via Random Forest feature importance reveals:
+
+<p align="center">
+  <img src="visualizations/feature_importance.png" width="700">
+</p>
+
 1. **Salinity** (38.5% importance) - Primary control on carbonate ion concentration
 2. **SST** (18.2%) - Temperature affects CO₂ solubility and carbonate equilibria
 3. **Chlorophyll-a** (13.2%) - Indicates biological CO₂ uptake patterns
@@ -154,12 +167,41 @@ Analysis via Random Forest feature importance reveals:
 
 The dominance of salinity aligns with marine chemistry theory, as it directly controls the concentration of carbonate ions available for aragonite formation.
 
+### Error Analysis
+
+<p align="center">
+  <img src="visualizations/residuals.png" width="600">
+</p>
+
+Residual plot shows random scatter around zero with no systematic bias, confirming model assumptions.
+
+<p align="center">
+  <img src="visualizations/error_distribution.png" width="600">
+</p>
+
+Error distribution is approximately normal with mean near zero, validating statistical assumptions.
+
 ### Practical Accuracy
 - **Can reliably distinguish** excellent sites (Ω > 3.5) from poor sites (Ω < 2.5)
 - **RMSE of 0.39** is within 2× typical measurement uncertainty (~0.15-0.20)
 - **Sufficient precision** for screening/prioritization (primary use case)
 - **Confidence scoring** enables identification of uncertain predictions for follow-up validation
 - **9% relative error** demonstrates strong predictive power across the operational range
+
+<details>
+<summary><b>Additional Visualizations</b></summary>
+
+#### Prediction Uncertainty Analysis
+<p align="center">
+  <img src="visualizations/prediction_uncertainty.png" width="700">
+</p>
+
+#### Global Sample Distribution
+<p align="center">
+  <img src="visualizations/sample_distribution.png" width="800">
+</p>
+
+</details>
 
 ## Scientific Context
 
