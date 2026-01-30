@@ -81,7 +81,9 @@ acid-project/
 │   └── sample_distribution.png
 ├── .gitignore
 ├── README.md
-└── requirements.txt
+├── requirements.txt          
+├── run_pipeline.bat      # Windows pipeline runner
+└── run_pipeline.sh       # Mac/Linux pipeline runner
 ```
 
 **Note: data/ directory is not included in the repository. It will be automatically created when running the training pipeline.*
