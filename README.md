@@ -131,7 +131,7 @@ python scripts/02_download_bathymetry.py
 # 3. Extract satellite data (requires GEE authentication)
 python scripts/03_extract_satellite_gee.py
 
-# 4. Train model and generate visualizations
+# 4. Train model
 python scripts/04_train_model.py
 ```
 
