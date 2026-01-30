@@ -130,11 +130,11 @@ print(f"Confidence: {confidence[0]:.1f}%")
 ## Performance Analysis
 
 ### Model Metrics
-- **Validation R²**: 0.74
-- **Test R²**: 0.80
-- **Validation RMSE**: 0.44 Ω units
-- **Test RMSE**: 0.39 Ω units
-- **Test MAE**: 0.23 Ω units
+- **Validation R²**: 0.743
+- **Test R²**: 0.801
+- **Validation RMSE**: 0.443 Ω units
+- **Test RMSE**: 0.387 Ω units
+- **Test MAE**: 0.233 Ω units
 - **Relative error**: 9.0% of mean Ωarag value
 
 <p align="center">
