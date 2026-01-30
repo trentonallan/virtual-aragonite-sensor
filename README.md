@@ -83,50 +83,20 @@ virtual-aragonite-sensor/
 
 ### Prerequisites
 ```bash
+# Clone the repository
+git clone https://github.com/trentonallan/virtual-aragonite-sensor.git
+cd virtual-aragonite-sensor
+
 # Install dependencies
 pip install -r requirements.txt
 
-# Authenticate with Google Earth Engine (required for satellite data)
+# Authenticate with Google Earth Engine (only needed if retraining from scratch)
 earthengine authenticate
 ```
 
-### Quick Start - Full Pipeline
+### Option 1: Use Pre-trained Model
 
-Run the complete pipeline to download data and train the model:
-```bash
-# Mac/Linux
-./run_pipeline.sh
-
-# Windows
-run_pipeline.bat
-```
-
-The pipeline will:
-1. Download and process GLODAP ocean chemistry data (~3,000 samples)
-2. Add ETOPO1 bathymetry data (~400MB download)
-3. Extract MODIS satellite features via Google Earth Engine (10-60 minutes)
-4. Train Random Forest model
-
-**Note:** Step 3 (satellite extraction) requires Google Earth Engine authentication and may take 10-60 minutes depending on network speed.
-
-### Manual Training Pipeline
-
-If you prefer to run steps individually:
-```bash
-# 1. Process ocean chemistry data
-python scripts/01_download_glodap.py
-
-# 2. Add bathymetry data
-python scripts/02_download_bathymetry.py
-
-# 3. Extract satellite data (requires GEE authentication)
-python scripts/03_extract_satellite_gee.py
-
-# 4. Train model
-python scripts/04_train_model.py
-```
-
-### Making Predictions
+The repository includes a pre-trained model, so you can make predictions immediately without downloading any data:
 ```python
 import pickle
 import numpy as np
@@ -147,6 +117,44 @@ predictions, confidence = predict_fn(model, new_data)
 
 print(f"Predicted Ωarag: {predictions[0]:.2f}")
 print(f"Confidence: {confidence[0]:.1f}%")
+```
+
+### Option 2: Train From Scratch
+
+#### Quick Start - Full Pipeline
+
+Run the complete pipeline to download data and train the model:
+```bash
+# Mac/Linux
+./run_pipeline.sh
+
+# Windows
+run_pipeline.bat
+```
+
+The pipeline will:
+1. Download and process GLODAP ocean chemistry data (~3,000 samples)
+2. Add ETOPO1 bathymetry data (~400MB download)
+3. Extract MODIS satellite features via Google Earth Engine (10-60 minutes)
+4. Train Random Forest model
+
+**Note:** Step 3 (satellite extraction) requires Google Earth Engine authentication and may take 10-60 minutes depending on network speed.
+
+#### Manual Training Pipeline
+
+If you prefer to run steps individually:
+```bash
+# 1. Process ocean chemistry data
+python scripts/01_download_glodap.py
+
+# 2. Add bathymetry data
+python scripts/02_download_bathymetry.py
+
+# 3. Extract satellite data (requires GEE authentication)
+python scripts/03_extract_satellite_gee.py
+
+# 4. Train model
+python scripts/04_train_model.py
 ```
 
 ## Performance Analysis
