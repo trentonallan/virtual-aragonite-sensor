@@ -71,9 +71,14 @@ acid-project/
 │   └── 04_train_model.py               # Train model
 ├── models/
 │   └── aragonite_model.pkl       # Trained model
-├── results/
-│   ├── predictions_with_bathymetry.png
-│   └── training_curves.png
+├── visualizations/
+│   ├── cv_distribution.png
+│   ├── error_distribution.png
+│   ├── feature_importance.png
+│   ├── metrics_comparison.png
+│   ├── prediction_uncertainty.png
+│   ├── residuals.png
+│   └── sample_distribution.png
 └── README.md
 ```
 
