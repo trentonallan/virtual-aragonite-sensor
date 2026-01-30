@@ -51,7 +51,7 @@ Model includes a `predict_with_confidence()` function that returns both predicti
 
 ## Project Structure
 ```
-acid-project/
+virtual-aragonite-sensor/
 ├── data/                 # Created by training pipeline*
 │   ├── raw/              # Downloaded datasets
 │   └── processed/        # Cleaned, merged data
@@ -216,11 +216,16 @@ Residual plot shows random scatter around zero with no systematic bias, confirmi
 Error distribution is approximately normal with mean near zero, validating statistical assumptions.
 
 ### Practical Accuracy
-- **Can reliably distinguish** excellent sites (Ω > 3.5) from poor sites (Ω < 2.5)
-- **RMSE of 0.39** is within 2× typical measurement uncertainty (~0.15-0.20)
-- **Sufficient precision** for screening/prioritization (primary use case)
-- **Confidence scoring** enables identification of uncertain predictions for follow-up validation
-- **9% relative error** demonstrates strong predictive power across the operational range
+- Reliably distinguishes good sites (Ω > 3.5) from poor ones (Ω < 2.5)
+- RMSE of 0.39 is comparable to measurement uncertainty (~0.2)
+- Good enough for initial screening, though not a replacement for in-situ validation
+- 9% error relative to mean values
+
+### Limitations
+- Requires in-situ salinity data (not available from satellites)
+- Only validated on surface waters (0-10m depth)
+- Performance may degrade in extreme environments (hypersaline areas, brackish water)
+- Training data biased toward well-studied regions
 
 <details>
 <summary><b>Additional Visualizations</b></summary>
@@ -292,10 +297,7 @@ Ksp increases with depth (higher pressure) and decreases with temperature. This 
 
 ## Acknowledgments
 
-- NOAA NCEI for GLODAP database
-- NASA for MODIS satellite data
-- Google Earth Engine for data processing infrastructure
-- Anthropic Claude for technical guidance
+Built using GLODAP ocean chemistry data (NOAA), MODIS satellite imagery (NASA), and Google Earth Engine's processing infrastructure.
 
 ## License
 
