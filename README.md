@@ -318,7 +318,7 @@ Ocean pH has dropped by 0.1 units since pre-industrial times (a 30% increase in 
 Coral restoration organizations typically face a brutal economic trade-off: site assessment requires expensive research cruises ($10k+/day), but they need to evaluate dozens of potential locations before committing $100k-$1M to restoration work.
 
 This tool doesn't replace direct ocean chemistry measurements. Instead, it enables applications that weren't economically feasible before:
-- **Global screening**: Survey many more sites in initial assessment
+- **Global screening**: Survey far more sites in initial assessment
 - **Continuous monitoring**: Track changes over time without repeated cruises  
 - **Quick spatial mapping**: Identify promising regions across entire coastlines
 
