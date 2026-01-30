@@ -15,14 +15,15 @@ An ML pipeline that predicts Ωarag from freely available satellite data (sea su
 - **R² = 0.80** on held-out test data
 - **RMSE = 0.39 Ω units** (9% relative error)
 - **MAE = 0.23 Ω units** (mean absolute error)
-- **2,140 training samples** spanning 21 years (2000-2021)
-- **Global coverage** from 60°S to 60°N
 - **Cross-validation**: 0.80 ± 0.04 R² (50-fold repeated CV)
 
 ## Methodology
 
 ### Data Sources
 - **Chemistry**: GLODAP v2.2023 (ocean carbon measurements)
+  - 2,140 samples after quality control
+  - Temporal coverage: 2000-2021 (21 years)
+  - Spatial coverage: 60°S to 60°N
 - **Satellite**: MODIS-Aqua (NASA, 4km resolution)
   - Sea Surface Temperature (SST)
   - Chlorophyll-a concentration
