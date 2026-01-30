@@ -145,7 +145,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 <div style="flex: 1;">
 
 <p align="center">
-  <img src="visualizations/predictions_vs_actual.png" width="400">
+  <img src="visualizations/predictions_vs_actual.png" width="90">
 </p>
 
 </div>
