@@ -244,7 +244,7 @@ Residuals scatter randomly around zero with no obvious patterns where the model 
 Errors follow a roughly normal distribution centered at zero, indicating the model isn't biased in either direction.
 
 ### Practical Accuracy
-- Reliably distinguishes excellent sites (Ω > 3.5) from poor ones (Ω < 2.5) - sufficient for initial screening
+- Reliably distinguishes excellent sites (Ω > 3.5) from poor ones (Ω < 2.5) which is sufficient for initial screening
 - RMSE of 0.39 is comparable to measurement uncertainty (~0.2)
 - Enables rapid site prioritization before committing to expensive field validation
 - 9% error relative to mean values - good enough to eliminate obviously unsuitable locations
