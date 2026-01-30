@@ -31,21 +31,12 @@ An ML pipeline that predicts Ωarag from freely available satellite data (sea su
 
 ### Model Architecture
 
-Random Forest ensemble model implemented in scikit-learn with the following configuration:
+I used a Random Forest (100 trees, max depth 15) because it handles small datasets well and gives built-in feature importance without tuning. The model splits data 60/20/20 for training/validation/test and uses 10-fold cross-validation to verify performance.
 
-- **Algorithm**: Random Forest Regressor (ensemble of 100 decision trees)
-- **Tree depth**: Maximum depth of 15 levels
-- **Split criteria**: Minimum 5 samples to split a node, minimum 2 samples per leaf
-- **Feature sampling**: Square root of total features per split (√7 ≈ 2-3 features)
-- **Training**: 60/20/20 train/validation/test split with 10-fold cross-validation (5 repeats)
-- **Evaluation**: R², RMSE, and MAE metrics
-- **Confidence scoring**: Ensemble variance across trees provides prediction uncertainty
-
-The Random Forest approach was chosen over neural networks for its:
-- Robustness to overfitting on small datasets (2,140 samples)
-- Built-in feature importance ranking
-- No hyperparameter tuning required for strong baseline performance
-- Interpretable predictions via ensemble variance (confidence scores)
+The forest approach beat neural networks here because:
+- More robust on 2,140 samples
+- Built-in feature rankings
+- Confidence scores from tree variance
 
 Model includes a `predict_with_confidence()` function that returns both predictions and uncertainty estimates based on inter-tree variance, enabling users to identify low-confidence predictions that may warrant in-situ validation.
 
