@@ -172,7 +172,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 
 
 ### Cross-Validation Results
-10-fold cross-validation with 5 repeats (50 total folds) demonstrates robust generalization:
+10-fold cross-validation with 5 repeats (50 total folds) shows consistent performance:
 - **Mean R²**: 0.8025
 - **Standard deviation**: 0.0411
 - **Range**: 0.6947 - 0.8620
@@ -199,7 +199,7 @@ Analysis via Random Forest feature importance reveals:
 6. **Bathymetry** (7.2%) - Proxies for upwelling and mixing dynamics
 7. **Depth** (1.8%) - Minor influence within surface sampling range
 
-The dominance of salinity aligns with marine chemistry theory, as it directly controls the concentration of carbonate ions available for aragonite formation.
+Salinity's dominance makes sense because it directly controls carbonate ion concentration, which is what corals need to build their skeletons.
 
 ### Error Analysis
 
