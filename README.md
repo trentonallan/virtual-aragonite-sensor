@@ -235,13 +235,13 @@ Salinity's dominance makes sense because it directly controls carbonate ion conc
   <img src="visualizations/residuals.png" width="600">
 </p>
 
-Residual plot shows random scatter around zero with no systematic bias, confirming model assumptions.
+Residuals scatter randomly around zero - no obvious patterns where the model consistently misses high or low.
 
 <p align="center">
   <img src="visualizations/error_distribution.png" width="600">
 </p>
 
-Error distribution is approximately normal with mean near zero, validating statistical assumptions.
+Errors follow a roughly normal distribution centered at zero, indicating the model isn't biased in either direction.
 
 ### Practical Accuracy
 - Reliably distinguishes excellent sites (Ω > 3.5) from poor ones (Ω < 2.5) - sufficient for initial screening
