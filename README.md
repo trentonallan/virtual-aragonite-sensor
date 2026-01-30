@@ -305,8 +305,4 @@ MIT License - Free to use for research and conservation
 ## Author
 
 **Trenton Allan**  
-Northeastern University - B.S. Computer Science (AI concentration)
-
-- Email: allan.tr@northeastern.edu
-- LinkedIn: https://linkedin.com/in/trentonallan
-- GitHub: https://github.com/trentonallan
+Northeastern University - B.S. Computer Science (AI concentration) | [allan.tr@northeastern.edu](mailto:allan.tr@northeastern.edu) | [LinkedIn](https://linkedin.com/in/trentonallan)
