@@ -129,7 +129,7 @@ print(f"Confidence: {confidence[0]:.1f}%")
 
 ## Performance Analysis
 
-<table border="0">
+<table style="border: none;">
  <tr>
   <td width="40%">
 ### Model Metrics
