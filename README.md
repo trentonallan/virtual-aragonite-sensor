@@ -322,3 +322,11 @@ B.S. Computer Science (AI concentration) | allan.tr@northeastern.edu | [LinkedIn
 
 [allan.tr@northeastern.edu](mailto:allan.tr@northeastern.edu) · [LinkedIn](https://linkedin.com/in/trentonallan) · [GitHub](https://github.com/trentonallan)
 
+## Contact
+
+Email: allan.tr@northeastern.edu
+
+LinkedIn: https://linkedin.com/in/trentonallan
+
+GitHub: https://github.com/trentonallan
+
