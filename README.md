@@ -79,7 +79,9 @@ acid-project/
 │   ├── prediction_uncertainty.png
 │   ├── residuals.png
 │   └── sample_distribution.png
-└── README.md
+├── .gitignore
+├── README.md
+└── requirements.txt
 ```
 
 **Note: data/ directory is not included in the repository. It will be automatically created when running the training pipeline.*
