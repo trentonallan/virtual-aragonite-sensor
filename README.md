@@ -1,6 +1,6 @@
 # Virtual Aragonite Sensor: ML-Based Ocean Acidification Monitoring
 
-Machine learning pipeline for predicting coral reef health from satellite data.
+A Random Forest model that predicts aragonite saturation state (coral reef health indicator) from satellite data, enabling conservation organizations to screen potential restoration sites at zero cost.
 
 ## Table of Contents
 - [Problem](#problem)
@@ -12,6 +12,7 @@ Machine learning pipeline for predicting coral reef health from satellite data.
 - [Performance Analysis](#performance-analysis)
 - [Scientific Context](#scientific-context)
 - [References](#references)
+- [Acknowledgments](#acknowledgments)
 - [License](#license)
 - [Author](#author)
 
@@ -251,7 +252,7 @@ Error distribution is approximately normal with mean near zero, validating stati
 - **Requires salinity data**: Not available from satellites. Users must provide either in-situ measurements or climatological estimates (ex: World Ocean Atlas)
 - Only validated on surface waters (0-10m depth)
 - Performance may degrade in extreme environments (hypersaline areas, brackish water)
-- Training data biased toward well studied regions
+- Training data biased toward well-studied regions
 
 <details>
 <summary><b>Additional Visualizations</b></summary>
