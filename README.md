@@ -191,13 +191,15 @@ Analysis via Random Forest feature importance reveals:
   <img src="visualizations/feature_importance.png" width="700">
 </p>
 
-1. **Salinity** (38.5% importance) - Primary control on carbonate ion concentration
-2. **SST** (18.2%) - Temperature affects CO₂ solubility and carbonate equilibria
-3. **Chlorophyll-a** (13.2%) - Indicates biological CO₂ uptake patterns
+1. **Salinity** (38.5% importance) - Proxy for total alkalinity, which buffers against pH changes
+2. **SST** (18.2%) - Controls CO₂ solubility in seawater (colder water holds more CO₂)
+3. **Chlorophyll-a** (13.2%) - Indicates biological CO₂ uptake by phytoplankton
 4. **Latitude** (11.4%) - Captures latitudinal temperature/chemistry gradients
 5. **Longitude** (9.7%) - Regional oceanographic patterns
 6. **Bathymetry** (7.2%) - Proxies for upwelling and mixing dynamics
 7. **Depth** (1.8%) - Minor influence within surface sampling range
+
+These satellite-derived features (SST, chlorophyll) and in-situ measurements (salinity) serve as proxies for the underlying carbonate chemistry that determines aragonite saturation.
 
 Salinity's dominance makes sense because it directly controls carbonate ion concentration, which is what corals need to build their skeletons.
 
