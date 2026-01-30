@@ -180,8 +180,10 @@ python scripts/04_train_model.py
 
 - **Validation R²**: 0.743
 - **Test R²**: 0.801
+
 - **Validation RMSE**: 0.443 Ω units
 - **Test RMSE**: 0.387 Ω units
+
 - **Test MAE**: 0.233 Ω units
 - **Relative error**: 9.0% of mean Ωarag value
 
