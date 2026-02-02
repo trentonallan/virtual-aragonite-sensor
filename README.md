@@ -45,12 +45,12 @@ An ML pipeline that predicts Ωarag from freely available satellite data (sea su
 
 ### Model Architecture
 
-I used a Random Forest (100 trees, max depth 15) because it handles small datasets well and automatically ranks feature importance during training. The model splits data 60/20/20 for training/validation/test and uses 10-fold cross-validation to verify performance.
+I used a Random Forest model (100 trees, max depth 15) because it handles small datasets well and automatically ranks feature importance during training. The model splits data 60/20/20 for training/validation/test and uses 10-fold cross-validation to verify performance.
 
 Random Forest worked better than neural networks here because:
-- More robust on small datasets (2,140 samples)
-- Automatically ranks feature importance during training
-- Provides confidence scores from ensemble variance
+- Less prone to overfitting smaller datasets (2,140 samples)
+- Built-in feature importance from split gains (helps validate oceanographic assumptions)
+- Uncertainty estimates from tree ensemble variance (important for field validation decisions)
 
 The model includes a `predict_with_confidence()` function that returns predictions with uncertainty estimates, helping identify which predictions should be validated in-situ.
 
@@ -208,7 +208,7 @@ python scripts/04_train_model.py
   <img src="visualizations/cv_distribution.png" width="600">
 </p>
 
-The low standard deviation (0.04) indicates consistent performance across different data subsets, confirming model stability.
+The low standard deviation (0.04) indicates consistent performance across different data subsets, suggesting the model generalizes well.
 
 ### Feature Importance
 Analysis from Random Forest feature importance reveals:
@@ -252,7 +252,7 @@ Errors follow a roughly normal distribution centered at zero, indicating the mod
 **Use case**: Screen 50 potential restoration sites using satellite data → narrow to 5 promising candidates → conduct detailed in-situ measurements at those 5 locations. Instead of measuring only 5 sites blindly, organizations can pre-screen 50 and measure the best 5.
 
 ### Limitations
-- **Requires salinity data**: Not available from satellites. Users must provide either in-situ measurements or climatological estimates (ex: World Ocean Atlas)
+- **Requires salinity data**: Not available from satellites. Users must provide either in-situ measurements or climatological estimates from World Ocean Atlas. Ocean salinity is relatively stable seasonally, making climatological data suitable for initial screening.
 - Only validated on surface waters (0-10m depth)
 - Performance may decrease in extreme environments (hypersaline areas, brackish water)
 - Training data biased toward well-studied regions
@@ -295,7 +295,7 @@ The aragonite saturation state quantifies whether seawater chemistry favors arag
 
 Where:
 - **[Ca²⁺]** and **[CO₃²⁻]** are the actual concentrations of calcium and carbonate ions in seawater
-- **Ksp** is the solubility product constant, the theoretical ion concentration product at which aragonite would be in equilibrium (neither forming nor dissolving)
+- **Ksp** is the solubility product: the ion concentration at which aragonite neither forms nor dissolves.
 
 **Interpreting Ω:**
 - **Ω > 1**: Seawater is *supersaturated*: aragonite formation is thermodynamically favorable
@@ -317,7 +317,7 @@ Ocean pH has dropped by 0.1 units since pre-industrial times (a 30% increase in 
 
 Coral restoration organizations typically face a brutal economic trade-off: site assessment requires expensive research cruises ($10k+/day), but they need to evaluate dozens of potential locations before committing $100k-$1M to restoration work.
 
-This tool doesn't replace direct ocean chemistry measurements. Instead, it enables applications that weren't economically feasible before:
+This tool doesn't replace direct ocean chemistry measurements. Instead, it enables conservation work that wasn't economically feasible before:
 - **Global screening**: Survey far more sites in initial assessment
 - **Continuous monitoring**: Track changes over time without repeated cruises  
 - **Quick spatial mapping**: Identify promising regions across entire coastlines
