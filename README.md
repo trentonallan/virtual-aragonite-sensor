@@ -36,7 +36,7 @@ An ML pipeline that predicts Ωarag from freely available satellite data (sea su
 ### Data Sources
 - **Chemistry**: GLODAP v2.2023 (ocean carbon measurements)
   - 2,140 samples after quality control
-  - Temporal coverage: 2000-2021 (21 years)
+  - Temporal coverage: 2000-2021
   - Spatial coverage: 60°S to 60°N
 - **Satellite**: MODIS-Aqua (NASA, 4km resolution)
   - Sea Surface Temperature (SST)
@@ -150,7 +150,7 @@ run_pipeline.bat
 The pipeline will:
 1. Download and process GLODAP ocean chemistry data (~3,000 samples)
 2. Add ETOPO1 bathymetry data (~400MB download)
-3. Extract MODIS satellite features via Google Earth Engine (10-60 minutes)
+3. Extract MODIS satellite features using Google Earth Engine (10-60 minutes)
 4. Train Random Forest model
 
 **Note:** Step 3 (satellite extraction) requires Google Earth Engine authentication and may take 10-60 minutes depending on network speed.
@@ -211,7 +211,7 @@ python scripts/04_train_model.py
 The low standard deviation (0.04) indicates consistent performance across different data subsets, confirming model stability.
 
 ### Feature Importance
-Analysis via Random Forest feature importance reveals:
+Analysis from Random Forest feature importance reveals:
 
 <p align="center">
   <img src="visualizations/feature_importance.png" width="700">
@@ -254,7 +254,7 @@ Errors follow a roughly normal distribution centered at zero, indicating the mod
 ### Limitations
 - **Requires salinity data**: Not available from satellites. Users must provide either in-situ measurements or climatological estimates (ex: World Ocean Atlas)
 - Only validated on surface waters (0-10m depth)
-- Performance may degrade in extreme environments (hypersaline areas, brackish water)
+- Performance may decrease in extreme environments (hypersaline areas, brackish water)
 - Training data biased toward well-studied regions
 
 <details>
@@ -309,7 +309,7 @@ Ksp increases with depth (higher pressure) and decreases with temperature. This 
 - **Ω = 3.0-3.5**: Good conditions, healthy reefs
 - **Ω = 2.5-3.0**: Marginal conditions, reduced growth
 - **Ω < 2.5**: Stressed corals, increased mortality risk
-- **Ω < 1.0**: Undersaturated, dissolution of existing structures
+- **Ω < 1.0**: Undersaturated, dissolution of existing reef structures
 
 ### Why This Matters
 
