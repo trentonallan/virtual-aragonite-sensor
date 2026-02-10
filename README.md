@@ -22,7 +22,7 @@ Ocean acidification threatens coral reefs by reducing aragonite saturation (Ωar
 
 ## Solution
 
-An ML pipeline that predicts Ωarag from freely available satellite data (sea surface temperature, chlorophyll-a), enabling global ocean chemistry screening at zero marginal cost.
+An ML pipeline that bridges the gap between what satellites can observe (SST, chlorophyll-a, ocean color) and what coral biologists need to know (Ωarag) by learning the relationship between surface-observable proxies and the underlying carbonate chemistry. Trained on GLODAP in-situ measurements, the model enables global screening at zero marginal cost.
 
 ## Results
  
@@ -225,9 +225,9 @@ Analysis from Random Forest feature importance reveals:
 6. **Bathymetry** (7.2%) - Proxies for upwelling and mixing dynamics
 7. **Depth** (1.8%) - Minor influence within surface sampling range
 
-These satellite-derived features (SST, chlorophyll) and in-situ measurements (salinity) serve as proxies for the underlying carbonate chemistry that determines aragonite saturation.
+Ωarag can't be observed from space, so the model relies on proxies (SST and chlorophyll-a from satellites) alongside salinity data to infer the underlying carbonate chemistry. 
 
-Salinity's dominance makes sense because it directly controls carbonate ion concentration, which is what corals need to build their skeletons.
+Salinity dominating feature importance makes sense chemically: it tracks closely with total alkalinity, one of the two carbonate system parameters needed to actually compute Ωarag.
 
 ### Error Analysis
 
@@ -310,6 +310,13 @@ Ksp increases with depth (higher pressure) and decreases with temperature. This 
 - **Ω = 2.5-3.0**: Marginal conditions, reduced growth
 - **Ω < 2.5**: Stressed corals, increased mortality risk
 - **Ω < 1.0**: Undersaturated, dissolution of existing reef structures
+
+### Why ML Is Needed
+Satellites observe surface properties like temperature and ocean color, but aragonite saturation depends on the full marine carbonate system. Solving that system requires at least two carbonate parameters (such as pH + total alkalinity, or pCO₂ + DIC), and no single satellite band provides Ωarag.
+
+This model learns the statistical relationship between satellite-observable surface features and 
+the carbonate chemistry measured in-situ by GLODAP research cruises, effectively acting as a 
+"virtual sensor" that infers what can't be directly observed from what can.
 
 ### Why This Matters
 
