@@ -128,7 +128,7 @@ predict_fn = package['predict_with_confidence']
 new_data = np.array([[35.0, 26.5, 0.15, 20.5, -155.2, -2500, 5.0]])
 
 # Get prediction with confidence score
-predictions, confidence = predict_fn(model, new_data)
+predictions, confidence = predict_fn(model, new_data, package['std_reference'])
 
 print(f"Predicted Ωarag: {predictions[0]:.2f}")
 print(f"Confidence: {confidence[0]:.1f}%")
