@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 import matplotlib.pyplot as plt
 import seaborn as sns
-import pickle
+import cloudpickle as pickle
 import time
 from pathlib import Path
 
@@ -170,6 +170,7 @@ tree_predictions = np.array([tree.predict(X_test) for tree in model.estimators_]
 
 # Calculate standard deviation across trees for each sample
 pred_std = tree_predictions.std(axis=0)
+std_reference = np.percentile(pred_std, 95)
 
 # Convert std to confidence percentage
 max_std = pred_std.max()
@@ -179,21 +180,13 @@ else:
     confidence_scores = np.ones(len(pred_std)) * 100
 
 # 8. Save model
-def predict_with_confidence(model_obj, X_new):
-    """
-    Make predictions with confidence scores.
-    
-    Returns: predictions, confidence (both arrays)
-    """
+def predict_with_confidence(model_obj, X_new, std_ref):
     tree_preds = np.array([tree.predict(X_new) for tree in model_obj.estimators_])
     predictions = tree_preds.mean(axis=0)
     pred_std = tree_preds.std(axis=0)
 
-    max_std = pred_std.max()
-    if max_std > 0:
-        confidence = 100 * (1 - pred_std / max_std)
-    else:
-        confidence = np.ones(len(pred_std)) * 100
+    confidence = 100 * (1 - pred_std / std_ref)
+    confidence = np.clip(confidence, 0, 100)
 
     return predictions, confidence
 
@@ -203,6 +196,7 @@ model_package = {
     'feature_cols': FEATURE_COLS,
     'feature_importance': dict(zip(FEATURE_COLS, importances)),
     'predict_with_confidence': predict_with_confidence,
+    'std_reference': std_reference,
 }
 
 # Save to disk

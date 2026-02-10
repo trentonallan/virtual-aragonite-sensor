@@ -11,6 +11,7 @@ earthengine-api>=0.1.0
 
 # Machine Learning
 scikit-learn>=1.3.0
+cloudpickle>=3.0.0
 
 # Visualization
 matplotlib>=3.7.0
