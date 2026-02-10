@@ -125,7 +125,7 @@ predict_fn = package['predict_with_confidence']
 
 # Input: [salinity, sst, chlor_a, latitude, longitude, bathymetry_m, depth]
 # Note: Salinity is not available from satellites. Must come from in-situ measurements or climatological data (ex: World Ocean Atlas) 
-new_data = np.array([[35.0, 26.5, 0.15, 20.5, -155.2, -2500, 5.0]])
+new_data = np.array([[35.2, 29.0, 0.03, 5.0, 73.0, -35, 3.0]])
 
 # Get prediction with confidence score
 predictions, confidence = predict_fn(model, new_data, package['std_reference'])
